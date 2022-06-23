@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        /* .gradient-custom {
+            /* fallback for old browsers */
+        /* background: #f093fb; */
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        /* background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1)); */
+
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        /* background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1)) */
+        /* } */
+        */ */ .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+
+        body {
+            background-image: url("paper.jpg");
+            background-color: #cccccc;
+            display: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-9 col-xl-7">
+                    <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Registration</h3>
+                            <form action="./login.html">
+
+
+                                <div class="col-md-12 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="firstName" class="form-control form-control-lg"
+                                            onkeyup="Firstname()" />
+
+                                        <label class="form-label" for="firstName">User Name</label>
+                                        <p id="error"></p>
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="col-md-12 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <input type="email" id="emailAddress" class="form-control form-control-lg"
+                                            onkeyup="Email()" />
+
+                                        <label class="form-label" for="emailAddress">Email</label>
+                                        <p id="mailerror"></p>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-12 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <input type="number" id="phoneNumber" class="form-control form-control-lg"
+                                            onkeyup="Mobile()" />
+                                        <label class="form-label" for="phoneNumber">Phone Number</label>
+                                        <p id="phonerror"></p>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <input type="password" id="pass" class="form-control form-control-lg"
+                                            onkeyup="Password()" />
+                                        <label class="form-label" for="phoneNumber">Password</label>
+                                        <p id="pass1"></p>
+
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="mt-4 pt-2">
+                                    <a href="#"> <input type="button" value="submit" onclick="login()" /></a>
+                                </div>
+
+                            </form>
+                            <p id="err"> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+
+    <script>
+        function Firstname() {
+            let fname = document.getElementById("firstName").value;
+
+            if (fname.length < 5 || isNaN(fname) == false || fname.length > 30) {
+                document.getElementById("firstName").style.border = "1px solid red";
+                document.getElementById("error").innerHTML = "enter valid name";
+                document.getElementById("error").style.color = "red";
+
+                return false;
+
+            }
+            else {
+                document.getElementById("firstName").style.border = "1px solid green";
+                document.getElementById("error").innerHTML = "";
+                return true;
+            }
+        }
+
+        function Email() {
+            let email = document.getElementById("emailAddress").value;
+            const re =
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (email === "" || email === "undefined") {
+                document.getElementById("emailAddress").style.border = "1px solid red";
+                document.getElementById("mailerror").innerHTML = "enter valid email";
+                document.getElementById("mailerror").style.color = "red";
+                return false;
+            }
+
+            if (re.test(String(email).toLowerCase())) {
+                document.getElementById("emailAddress").style.border = "1px solid green";
+                document.getElementById("mailerror").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("emailAddress").style.border = "1px solid red";
+                document.getElementById("mailerror").innerHTML = "enter valid email";
+                document.getElementById("mailerror").style.color = "red";
+
+                return false;
+            }
+        }
+
+        /*---   Mobile Name--------*/
+
+        function Mobile() {
+            let mobile = document.getElementById("phoneNumber").value;
+            if (mobile.length == 10) {
+                document.getElementById("phoneNumber").style.border = "1px solid green";
+                document.getElementById("phonerror").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("phoneNumber").style.border = "1px solid red";
+                document.getElementById("phonerror").innerHTML = "enter 10 digit number only";
+                document.getElementById("phonerror").style.color = "red";
+                return false
+            }
+        }
+
+        /*----- password -----*/
+
+        function Password() {
+            let password = document.getElementById("pass").value;
+
+            const re = /^(?=.*\d)(?=.*[A-Z]).{8,14}$/
+            if (password === '' || password === 'undefined') {
+                document.getElementById("pass").style.border = "1px solid red";
+                document.getElementById("pass1").innerHTML = "enter valid password";
+                document.getElementById("pass1").style.color = "red";
+                return false
+            }
+            if (re.test(password)) {
+                document.getElementById("pass").style.border = "1px solid  green";
+                document.getElementById("pass1").innerHTML = " ";
+                return true;
+            }
+            else {
+                document.getElementById("pass").style.border = "1px solid red";
+                document.getElementById("pass1").innerHTML = "enter valid password";
+                document.getElementById("pass1").style.color = "red";
+                return false;
+            }
+        }
+
+        arr=JSON.parse(localStorage.getItem("users"))!== null ? JSON.parse(localStorage.getItem("users")):[];
+        //var arr=[];
+        function login() {
+           // var arr = JSON.stringify(localStorage.getItem("users"));
+            var fname = document.getElementById("firstName").value
+            var email = document.getElementById("emailAddress").value
+            var number = document.getElementById("phoneNumber").value
+            var password = document.getElementById("pass").value
+
+            if (Firstname() && Email() && Mobile() && Password()) {
+                arr.push({ name: fname, email: email, number: number, password: password });
+                console.log(arr);
+                localStorage.setItem("users", JSON.stringify(arr));
+                window.location.href = "./login.html";
+            } else {
+                Firstname()
+                Email()
+                Mobile()
+                Password()
+            }
+        }
+
+       
+        
+
+        // function saveData() {
+        //     let fname, email, mobile, password;
+        //     fname = document.getElementById("firstName").value;
+        //     email = document.getElementById("emailAddress").value;
+        //     mobile = document.getElementById("phoneNumber").value;
+        //     password = document.getElementById("pass").value;
+        //     let user_records = new Array();
+        //     user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+        //     if (user_records.some((v) => { return v.email == email })) {
+        //         alert("duplicate data");
+        //     }
+        //     else {
+        //         user_records.push({
+        //             "fname": fname,
+        //             "email": email,
+        //             "mobile": mobile,
+        //             "password": password
+        //         })
+        //         localStorage.setItem("users", JSON.stringify(user_records));
+        //         window.location.href = "login.html";
+        //     }
+        // }
+
+        // function someFunction() {
+            // saveData();
+            // login();
+        // }
+
+    </script>
+</body>
+
+</html>

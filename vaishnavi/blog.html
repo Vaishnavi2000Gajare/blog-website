@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>Blog</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+
+
+<body class="bg">
+    <form class="form" action="home.html">
+        <br>
+        <h1 class="H" style="text-align:center;padding-bottom: 8px; color: black;">Upload Blog</h1>
+
+
+
+        <div id="form_element">
+            <input onkeyup="Title()" class="Bsize" type="text" placeholder="Enter the title" id="title">
+            <p id="para1">please enter the title</p>
+        </div>
+
+        <div id="form_element">
+            <input onkeyup="Description()" class="Bsize" type="text" placeholder="Description" id="description">
+            <p id="para2">please enter the description</p>
+        </div>
+
+        <div id="form_element">
+            <input onkeyup="AuthorName()" class="Bsize" type="text" placeholder="Author Name" id="name">
+            <p id="para3">please enter author name</p>
+        </div>
+
+
+
+        <div id="form_element">
+            <input onkeyup="onDate()" class="Bsize" type="date" placeholder=" " id="date">
+            <p id="para4"></p>
+
+        </div>
+
+        <div id="form_element">
+            <label for="img">Select image:</label>
+            <input type="file" class="Bsize" id="file" name="image"  accept="image/*">
+            <p id="para5">please upload file</p>
+          </div>
+
+          
+
+        <div id="form_element">
+            <input type="button" class="button button2" value="Submit" onclick="someFunction()" id="submit">
+            <p id="error"></p>
+
+        </div>
+
+    </form>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+
+
+<script src="./blog.js">
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(232, 147, 20);
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    background-color: rgb(246, 243, 239);
+    border-radius: 30px;
+    width: 400px;
+    max-width: 100%;
+}
+.form{
+    padding:30px 40px;
+}
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+  
+}
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+
+}
+.form-control input{
+    border:2px solid white;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+
+    
+}
+    

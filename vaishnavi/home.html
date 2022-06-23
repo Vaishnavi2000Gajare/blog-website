@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    #A{
+      margin-right: 60px;
+    }
+  </style>
+</head>
+
+
+
+<body class="bg">
+  <a href="./blog.html" style="position: fixed;top: 2%;right: 2%;" id="A">Create Blog</a>
+ 
+  <a href="./login.html" style="position: fixed;top: 2%;right: 2%;">Logout</a>
+
+  <h1 class="home">This Is My Blog</h1>
+
+  <div class="grid-container" id="blog1" >
+    
+  </div>
+
+  <script>
+    var arr =JSON.parse(localStorage.getItem("blogs"));
+        console.log(arr);   
+        var tbodyHTML = ``;
+
+        for (i = 0; i < arr.length; i++) {
+            var element = arr[i];
+            tbodyHTML += `<div class="grid-item">
+            <div><img src="${element.image}" height="200px"/></div>
+            <p><b>Blog title : </b>${element.title}</p>
+            <p><b>Author Name :</b> ${element.name}</p>
+            <p><b>Post Date :</b> ${element.date}</p>
+            <p> <b>Description :</b> ${element.description}</p>
+        </div>`;
+        }
+        document.getElementById("blog1").innerHTML = tbodyHTML;
+
+
+  </script>
+</body>
+
+
+
+
+</html>
